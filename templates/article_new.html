@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Yangi post yaratish</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{form.media}}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-success ml-2">Yaratish</button>
+    </form>
+{% endblock content %}

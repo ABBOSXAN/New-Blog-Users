@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Postni o'chirish</h1>
+    <form method="post">{% csrf_token %}
+        <p>"{{article.title}}" nomli maqolani o'chirishni istaysizmi?</p>
+        <button type="submit" class="btn btn-danger ml-2">Ha</button>
+    </form>
+{% endblock content %}

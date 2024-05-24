@@ -2,9 +2,14 @@
 
 {% block title %}Bosh sahifa{% endblock title %}
 {% block content %}
+<br>
     {% if user.is_authenticated %}
-        <p>{{user.username}}, xush kelibsiz!</p>
-        <p><a href="{% url 'logout' %}">Saytdan chiqish</a></p>
+        <h4 style="color: grey">{{user.username | title}}, xush kelibsiz!</h4>
+<br>
+        <h5>
+            <a href="{% url 'logout' %}">Saytdan chiqish</a> |
+            <a href="{% url 'article_list' %}">Postlar</a>
+        </h5>
     {% else %}
         <p>Siz hali saytga kirmagansiz! Iltimos ro'yhatdan o'ting!</p>
         <p>

@@ -3,21 +3,21 @@
 {% block title %}Postlar{% endblock title %}
 
 {% block content %}
+<br>
     {% for article in object_list %}
-        <div class="card" style="with: 1rem">
-            <div class="card-header">
-                <span class="font-weight-bold"><a href="{% url 'article_detail' article.pk %}"><h2>{{article.title}}</h2></a></span>
+            <div class="card" style="with: 1rem">
+                <div class="card-header">
+                    <span class="font-weight-bold"><a href="{% url 'article_detail' article.pk %}"><h3>{{article.title}}</h3></a></span>
+                </div>
+                {% if article.photo %}
+                    <img class="card-img-top" src="{{article.photo.url}}" alt="{{article.title}}">
+                {% endif %}
+                <div class="card-body">
+                    <h5>{{article.summary}}</h5><a href="{% url 'article_detail' article.pk %}">batafsil...</a>
+                </div>
+                <div class="card-footer text-left text-muted">
+                    <span class="text-muted">Muallif: {{article.author | title}}, {{article.date}}</span>
+                </div>
             </div>
-            {% if article.photo %}
-                <img class="card-img-top" src="{{article.photo.url}}" alt="{{article.title}}">
-            {% endif %}
-            <div class="card-body">
-                {{article.summary}}... <a href="{% url 'article_detail' article.pk %}">batafsil</a>
-            </div>
-            <div class="card-footer text-left text-muted">
-                <span class="text-muted">Muallif: {{article.author | title}} {{article.date}}</span>
-            </div>
-
-        </div>
     {% endfor %}
 {% endblock content %}

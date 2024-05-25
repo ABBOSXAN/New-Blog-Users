@@ -6,6 +6,7 @@
 <h2>Saytga kirish</h2>
 <form method="post">{% csrf_token %}
     {{form|crispy}}
+    <p><a href="{% url 'password_reset' %}">Kalit so'z esimdan chiqdi</a></p>
     <button type="submit" class="btn btn-success">Kirish</button>
 </form>
 {% endblock content %}

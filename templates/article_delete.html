@@ -5,6 +5,6 @@
     <form method="post">{% csrf_token %}
         <p>"{{article.title}}" nomli maqolani o'chirishni istaysizmi?</p>
         <button type="submit" class="btn btn-danger ml-2">Ha</button>
-        <button type="submit" class="btn btn-success ml-2">Yo'q</button>
+        <a role="button" class="btn btn-outline-success" href="{% url 'article_list' %}">Yo'q</a>
     </form>
 {% endblock content %}
